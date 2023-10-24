@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Birthday";
+}
+
+@model Lab1.Models.Birthday;
+
+<h1>Urodziny Formularz</h1>
+<form action="Birthday">
+    <input type="text" asp-for="Imie" /> Imie
+    <input type="number" asp-for="Rok" /> Rok urodzenia
+    <input type="submit" />
+</form>
+
+@ViewBag.powitanie

@@ -1,0 +1,27 @@
+﻿
+
+<h2>Kalkulator</h2>
+<p>Wynik działania dla @ViewBag.A @ViewBag.Op @ViewBag.B = @ViewBag.Result</p>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p class="text-danger">@ViewBag.ErrorMessage</p>
+}
+
+<form asp-action="Calculator" method="get">
+    <label for="op">Operator:</label>
+    <select name="op" id="op">
+        <option value="Add">Dodawanie</option>
+        <option value="Sub">Odejmowanie</option>
+        <option value="Mul">Mnożenie</option>
+        <option value="Div">Dzielenie</option>
+    </select>
+
+    <label for="a">Liczba a:</label>
+    <input type="text" name="a" id="a" value="@ViewBag.A" />
+
+    <label for="b">Liczba b:</label>
+    <input type="text" name="b" id="b" value="@ViewBag.B" />
+
+    <input type="submit" value="Oblicz" />
+</form>
